@@ -1,4 +1,4 @@
-# github-actions-docker-build
+# Building and Pushing a Docker Image using GitHub actions.
 
 
 Here is where GitHub Actions comes to the rescue.
@@ -9,7 +9,7 @@ Using GitHub Actions, all we need to do is write is a small YAML file that will 
 is to create a GitHub repo for your Docker image. If you were already using the old Docker Automated Build system, you must be having a GitHub repo too. So you can use the same.
 
 ## Step 2 
-is to compose a Dockerfile. Again, if you already had an automated build in the past, you would be having this Dockerfile too. I have written a very simple Dockerfile that will print my name on the console when it is run.
+is to compose a Dockerfile. Again, if you already had an automated build in the past, you would be having this Dockerfile too. I have written a very simple Dockerfile For a flask application which application print "Hello from app1".
 
 ## Step 3 
 is where we write our GitHub workflows YAML file. GitHub actually provides us with a template for this. So we need not worry much about this. Just head to Actions. Then click on Set up this workflow; for the Docker Image workflow.
@@ -23,8 +23,7 @@ you need to get a Docker Token for yourself. If you already know what this is an
 ## Step 6. 
 Get back to your GitHub repository. Head to your repo Settings. Then go to the Secrets section. Click on "New repository secret". Then name it DOCKER_TOKEN. Because that is what we used in our YAML file too. Paste the token that we copied from Docker Hub. Click on Add Secret.
 
-## Step 7. 
-Trigger the workflow. I am going to make a small change to the code so that the build gets retriggered. There is an alternative way to manually trigger builds. I will cover that in the bonus tip section towards the end of this video.
+ 
 
 That's it. Now you should see the workflow run successfully. Go to your Docker Hub repo and you will see your new Docker Image there.
 
