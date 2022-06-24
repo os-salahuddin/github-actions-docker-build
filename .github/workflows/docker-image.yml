@@ -15,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag akpual1991/app-backend:latest
+      run: docker build . --file Dockerfile --tag akpual1991/app-backend:v9
     - name: Log in to Docker Hub and push
-      run: docker login -u akpaul1991 -p ${{ secrets.DOCKER_TOKEN }} && docker push akpual1991/app-backend
+      run: docker login -u akpaul1991 -p ${{ secrets.DOCKER_TOKEN }} && docker push akpual1991/app-backend:v9
