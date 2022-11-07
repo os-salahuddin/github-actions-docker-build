@@ -10,15 +10,16 @@ on:
       tags:
         description: 'Test scenario tags'
 
-jobs:
 
-  build:
+# jobs:
 
-    runs-on: ubuntu-latest
+#   build:
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag akpaul1991/app-backend:v.08
-    - name: Log in to Docker Hub and push
-      run: docker login -u akpaul1991 -p ${{ secrets.DOCKER_TOKEN }} && docker push akpaul1991/app-backend:v.08
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     - uses: actions/checkout@v3
+#     - name: Build the Docker image
+#       run: docker build . --file Dockerfile --tag akpaul1991/app-backend:v.08
+#     - name: Log in to Docker Hub and push
+#       run: docker login -u akpaul1991 -p ${{ secrets.DOCKER_TOKEN }} && docker push akpaul1991/app-backend:v.08
