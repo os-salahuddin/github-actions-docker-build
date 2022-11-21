@@ -1,25 +1,20 @@
-name: CI
-
 on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'
+  push:
+    branches:
+      - main
+
+name: Build and Push Docker Image
 
 
-# jobs:
+jobs:
 
-#   build:
+  build:
 
-#     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-#     steps:
-#     - uses: actions/checkout@v3
-#     - name: Build the Docker image
-#       run: docker build . --file Dockerfile --tag akpaul1991/app-backend:v.08
-#     - name: Log in to Docker Hub and push
-#       run: docker login -u akpaul1991 -p ${{ secrets.DOCKER_TOKEN }} && docker push akpaul1991/app-backend:v.08
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag akpaul1991/app-backend:v.08
+    - name: Log in to Docker Hub and push
+      run: docker login -u akpaul1991 -p ${{ secrets.DOCKER_TOKEN }} && docker push akpaul1991/app-backend:v.08
